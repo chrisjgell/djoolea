@@ -20,6 +20,13 @@ protected:
     void resizeEvent(QResizeEvent* event);
 
 private:
+
+    static const QString STS_GROUP;
+
+    static const QString STS_GEOMETRY;
+
+    static const QString STS_SPLITTER;
+
     void initGui();
 
     void storeGeometry();
