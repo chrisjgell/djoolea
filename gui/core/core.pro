@@ -4,16 +4,14 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = ui
-TEMPLATE = app
+TARGET = djoolea-gui-core
+TEMPLATE = lib
 
-
-SOURCES += main.cpp\
-        DjooleaWindow.cpp
+SOURCES += DjooleaWindow.cpp
 
 HEADERS  += DjooleaWindow.h
 

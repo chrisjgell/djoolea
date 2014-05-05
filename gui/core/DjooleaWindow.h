@@ -3,19 +3,19 @@
 
 #include <QMainWindow>
 #include <QSettings>
+#include <QtDebug>
 
 namespace Ui {
-class DjooleaWindow;
+    class DjooleaWindow;
 }
 
-class DjooleaWindow : public QMainWindow
-{
+class DjooleaWindow : public QMainWindow {
     Q_OBJECT
     
 public:
     explicit DjooleaWindow(QWidget *parent = 0);
-    ~DjooleaWindow();
-    
+
+    ~DjooleaWindow();   
 protected:
     void resizeEvent(QResizeEvent* event);
 
@@ -23,11 +23,13 @@ private:
 
     static const QString STS_GROUP;
 
-    static const QString STS_GEOMETRY;
+    static const QString STS_GEOM;
 
-    static const QString STS_SPLITTER;
+    static const QString STS_GEOM_SPLITTER;
 
     void initGui();
+
+    void initConnections();
 
     void storeGeometry();
 
