@@ -11,7 +11,6 @@ DjooleaWindow::DjooleaWindow(QWidget *parent) :
     ui_->setupUi(this);
     settings_.beginGroup(STS_GROUP);
     initGui();
-    initConnections();
 }
 
 DjooleaWindow::~DjooleaWindow() {
@@ -24,17 +23,17 @@ void DjooleaWindow::initGui() {
     QByteArray geometrySetts = settings_.value(STS_GEOM).toByteArray();
     QByteArray splitterSetts = settings_.value(STS_GEOM_SPLITTER).toByteArray();
 
+    if(!restoreGeometry(geometrySetts)) {
+
+    }
+
     if(!ui_->contentSplitter->restoreGeometry(splitterSetts)) {
         qDebug() << Q_FUNC_INFO << "Initialising contentSplitter settings";
         ui_->contentSplitter->setSizes(QList<int>() << 300 << width() - 300);
     }
 }
 
-void DjooleaWindow::initConnections() {
-
-}
-
-void DjooleaWindow::storeGeometry() {
+void DjooleaWindow::saveGuiSettings() {
     qDebug() << Q_FUNC_INFO << "saving window geometry";
     settings_.setValue(STS_GEOM, saveGeometry());
 
@@ -42,6 +41,10 @@ void DjooleaWindow::storeGeometry() {
     settings_.setValue(STS_GEOM_SPLITTER, ui_->contentSplitter->saveState());
 }
 
+void DjooleaWindow::loadGuiSettings() {
+
+}
+
 void DjooleaWindow::resizeEvent(QResizeEvent* event) {
-    storeGeometry();
+    saveGuiSettings();
 }

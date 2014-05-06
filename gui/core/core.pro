@@ -12,7 +12,5 @@ TARGET = djoolea-gui-core
 TEMPLATE = lib
 
 SOURCES += DjooleaWindow.cpp
-
 HEADERS  += DjooleaWindow.h
-
 FORMS    += DjooleaWindow.ui

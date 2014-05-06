@@ -22,16 +22,14 @@ protected:
 private:
 
     static const QString STS_GROUP;
-
     static const QString STS_GEOM;
-
     static const QString STS_GEOM_SPLITTER;
 
     void initGui();
 
-    void initConnections();
+    void saveGuiSettings();
 
-    void storeGeometry();
+    void loadGuiSettings();
 
     QSettings settings_;
 
