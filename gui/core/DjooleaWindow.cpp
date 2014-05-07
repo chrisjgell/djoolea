@@ -1,3 +1,4 @@
+#include <QCoreApplication>
 #include "DjooleaWindow.h"
 #include "ui_DjooleaWindow.h"
 
@@ -7,9 +8,8 @@ const QString DjooleaWindow::STS_GEOM_SPLITTER = QString("setts_geom_content_spl
 
 DjooleaWindow::DjooleaWindow(QWidget *parent) :
         QMainWindow(parent), ui_(new Ui::DjooleaWindow) {
-
     ui_->setupUi(this);
-    settings_.beginGroup(STS_GROUP);
+    settingsFile =  QApplication::applicationDirPath() + "/djoolea-setts.ini";
     initGui();
 }
 
@@ -18,33 +18,36 @@ DjooleaWindow::~DjooleaWindow() {
 }
 
 void DjooleaWindow::initGui() {
-    restoreGeometry(settings_.value(STS_GEOM).toByteArray());
+    ui_->searchLineEdit->setPlaceholderText("Search");
 
-    QByteArray geometrySetts = settings_.value(STS_GEOM).toByteArray();
-    QByteArray splitterSetts = settings_.value(STS_GEOM_SPLITTER).toByteArray();
+    loadSettings();
+}
+
+void DjooleaWindow::loadSettings() {
+    QSettings settings(settingsFile, QSettings::NativeFormat);
+    QByteArray geometrySetts = settings.value(STS_GEOM).toByteArray();
+    QByteArray splitterSetts = settings.value(STS_GEOM_SPLITTER).toByteArray();
 
     if(!restoreGeometry(geometrySetts)) {
-
+         qDebug() << Q_FUNC_INFO << "Init window geometry";
+         //TODO set window postion to middle of screen
     }
 
-    if(!ui_->contentSplitter->restoreGeometry(splitterSetts)) {
-        qDebug() << Q_FUNC_INFO << "Initialising contentSplitter settings";
+    if(!ui_->contentSplitter->restoreState(splitterSetts)) {
+        qDebug() << Q_FUNC_INFO << "Init splitter state";
         ui_->contentSplitter->setSizes(QList<int>() << 300 << width() - 300);
     }
 }
 
-void DjooleaWindow::saveGuiSettings() {
+void DjooleaWindow::saveSettings() {
+    QSettings settings(settingsFile, QSettings::NativeFormat);
     qDebug() << Q_FUNC_INFO << "saving window geometry";
-    settings_.setValue(STS_GEOM, saveGeometry());
+    settings.setValue(STS_GEOM, saveGeometry());
 
-    qDebug() << Q_FUNC_INFO << "saving contentSplitter geometry";
-    settings_.setValue(STS_GEOM_SPLITTER, ui_->contentSplitter->saveState());
+    qDebug() << Q_FUNC_INFO << "saving splitter state";
+    settings.setValue(STS_GEOM_SPLITTER, ui_->contentSplitter->saveState());
 }
 
-void DjooleaWindow::loadGuiSettings() {
-
-}
-
-void DjooleaWindow::resizeEvent(QResizeEvent* event) {
-    saveGuiSettings();
+void DjooleaWindow::closeEvent(QCloseEvent *event) {
+    saveSettings();
 }

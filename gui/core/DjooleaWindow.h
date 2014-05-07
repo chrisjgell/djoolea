@@ -17,7 +17,7 @@ public:
 
     ~DjooleaWindow();   
 protected:
-    void resizeEvent(QResizeEvent* event);
+    void closeEvent(QCloseEvent* event);
 
 private:
 
@@ -26,15 +26,14 @@ private:
     static const QString STS_GEOM_SPLITTER;
 
     void initGui();
+    void saveSettings();
+    void loadSettings();
+private slots:
 
-    void saveGuiSettings();
-
-    void loadGuiSettings();
-
-    QSettings settings_;
-
+private:
     Ui::DjooleaWindow *ui_;
 
+    QString settingsFile;
 };
 
 #endif // DJOOLEAWINDOW_H

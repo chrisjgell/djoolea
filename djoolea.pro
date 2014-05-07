@@ -2,7 +2,8 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     gui \
-    app
+    app \
+    lib
 
 #Dependencies
 app.depends = gui
