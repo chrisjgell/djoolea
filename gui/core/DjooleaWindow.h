@@ -1,9 +1,12 @@
 #ifndef DJOOLEAWINDOW_H
 #define DJOOLEAWINDOW_H
 
+#include "PlayerControlsWidget.h"
+
 #include <QMainWindow>
 #include <QSettings>
 #include <QtDebug>
+
 
 namespace Ui {
     class DjooleaWindow;
@@ -26,14 +29,26 @@ private:
     static const QString STS_GEOM_SPLITTER;
 
     void initGui();
+
+    void initSidebar();
+
+    void initPlaylist();
+
+    void initControls();
+
+    void initStyles();
+
     void saveSettings();
+
     void loadSettings();
+
+    QString getSettingsFilename();
+
 private slots:
 
 private:
-    Ui::DjooleaWindow *ui_;
-
-    QString settingsFile;
+    Ui::DjooleaWindow *ui;
+    PlayerControlsWidget *m_playerControls;
 };
 
 #endif // DJOOLEAWINDOW_H
