@@ -2,6 +2,8 @@
 #define DJOOLEAWINDOW_H
 
 #include "PlayerControlsWidget.h"
+#include "SearchBarWidget.h"
+#include "PlaylistWidget.h"
 
 #include <QMainWindow>
 #include <QSettings>
@@ -30,14 +32,6 @@ private:
 
     void initGui();
 
-    void initSidebar();
-
-    void initPlaylist();
-
-    void initControls();
-
-    void initStyles();
-
     void saveSettings();
 
     void loadSettings();
@@ -49,6 +43,8 @@ private slots:
 private:
     Ui::DjooleaWindow *ui;
     PlayerControlsWidget *m_playerControls;
+    SearchBarWidget *m_searchBar;
+    PlaylistWidget *m_playlist;
 };
 
 #endif // DJOOLEAWINDOW_H

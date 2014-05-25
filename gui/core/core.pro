@@ -12,9 +12,17 @@ TARGET = djoolea-gui-core
 TEMPLATE = lib
 
 SOURCES += DjooleaWindow.cpp \
-    PlayerControlsWidget.cpp
+    PlayerControlsWidget.cpp \
+    SearchBarWidget.cpp \
+    PlaylistWidget.cpp
 HEADERS  += DjooleaWindow.h \
-    PlayerControlsWidget.h
+    PlayerControlsWidget.h \
+    SearchBarWidget.h \
+    PlaylistWidget.h
 FORMS    += DjooleaWindow.ui \
-    PlayerControlsWidget.ui
+    PlayerControlsWidget.ui \
+    SearchBarWidget.ui \
+    PlaylistWidget.ui
+
+RESOURCES +=
 

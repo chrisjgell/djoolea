@@ -1,4 +1,5 @@
 #include <QCoreApplication>
+#include <QHBoxLayout>
 #include "DjooleaWindow.h"
 #include "ui_DjooleaWindow.h"
 #include "PlayerControlsWidget.h"
@@ -12,47 +13,29 @@ DjooleaWindow::DjooleaWindow(QWidget *parent) :
         QMainWindow(parent), ui(new Ui::DjooleaWindow) {
     ui->setupUi(this);
     initGui();
+    loadSettings();
 }
 
 DjooleaWindow::~DjooleaWindow() {
     delete ui;
+    delete m_searchBar;
     delete m_playerControls;
+    delete m_playlist;
 }
 
 void DjooleaWindow::initGui() {
-    ui->searchLineEdit->setPlaceholderText("Search");
-    //
-    initSidebar();
-    initPlaylist();
-    initControls();
-    initStyles();
-    //
-    loadSettings();
-}
-
-void DjooleaWindow::initSidebar() {
-
-}
-
-void DjooleaWindow::initPlaylist() {
-
-}
-
-void DjooleaWindow::initControls() {
+    m_searchBar = new SearchBarWidget(ui->headerFrame);
     m_playerControls = new PlayerControlsWidget(ui->controlsFrame);
+    m_playlist = new PlaylistWidget(ui->playlist);
 }
-
-void DjooleaWindow::initStyles() {}
 
 void DjooleaWindow::loadSettings() {
     QSettings settings(getSettingsFilename(), QSettings::NativeFormat);
     QByteArray geometrySetts = settings.value(STS_GEOM).toByteArray();
     QByteArray splitterSetts = settings.value(STS_GEOM_SPLITTER).toByteArray();
 
-    if(!restoreGeometry(geometrySetts)) {
-         qDebug() << Q_FUNC_INFO << "Init window geometry";
-         //TODO set window postion to middle of screen
-    }
+    qDebug() << Q_FUNC_INFO << "Init window geometry";
+    restoreGeometry(geometrySetts);
 
     if(!ui->contentSplitter->restoreState(splitterSetts)) {
         qDebug() << Q_FUNC_INFO << "Init splitter state";
