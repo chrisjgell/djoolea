@@ -14,15 +14,18 @@ TEMPLATE = lib
 SOURCES += DjooleaWindow.cpp \
     PlayerControlsWidget.cpp \
     SearchBarWidget.cpp \
-    PlaylistWidget.cpp
+    PlaylistWidget.cpp \
+    TrackInfoWidget.cpp
 HEADERS  += DjooleaWindow.h \
     PlayerControlsWidget.h \
     SearchBarWidget.h \
-    PlaylistWidget.h
+    PlaylistWidget.h \
+    TrackInfoWidget.h
 FORMS    += DjooleaWindow.ui \
     PlayerControlsWidget.ui \
     SearchBarWidget.ui \
-    PlaylistWidget.ui
+    PlaylistWidget.ui \
+    TrackInfoWidget.ui
 
 RESOURCES +=
 

@@ -1,5 +1,5 @@
 #include <QCoreApplication>
-#include <QHBoxLayout>
+#include <QVBoxLayout>
 #include "DjooleaWindow.h"
 #include "ui_DjooleaWindow.h"
 #include "PlayerControlsWidget.h"
@@ -24,9 +24,16 @@ DjooleaWindow::~DjooleaWindow() {
 }
 
 void DjooleaWindow::initGui() {
-    m_searchBar = new SearchBarWidget(ui->headerFrame);
-    m_playerControls = new PlayerControlsWidget(ui->controlsFrame);
+    qDebug() << Q_FUNC_INFO << "creating widgets";
+    m_contentLayout = new QVBoxLayout();
     m_playlist = new PlaylistWidget(ui->playlist);
+    m_searchBar = new SearchBarWidget(ui->headerFrame);
+    m_playerControls = new PlayerControlsWidget(ui->controlsFrame);    
+
+    qDebug() << Q_FUNC_INFO << "setting layouts";
+    ui->playlist->setLayout(m_contentLayout);
+    m_contentLayout->addWidget(m_playlist);
+    m_contentLayout->setMargin(0);
 }
 
 void DjooleaWindow::loadSettings() {
@@ -34,11 +41,11 @@ void DjooleaWindow::loadSettings() {
     QByteArray geometrySetts = settings.value(STS_GEOM).toByteArray();
     QByteArray splitterSetts = settings.value(STS_GEOM_SPLITTER).toByteArray();
 
-    qDebug() << Q_FUNC_INFO << "Init window geometry";
+    qDebug() << Q_FUNC_INFO << "init window geometry";
     restoreGeometry(geometrySetts);
 
     if(!ui->contentSplitter->restoreState(splitterSetts)) {
-        qDebug() << Q_FUNC_INFO << "Init splitter state";
+        qDebug() << Q_FUNC_INFO << "init splitter state";
         ui->contentSplitter->setSizes(QList<int>() << 300 << width() - 300);
     }
 }

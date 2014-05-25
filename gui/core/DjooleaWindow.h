@@ -8,7 +8,7 @@
 #include <QMainWindow>
 #include <QSettings>
 #include <QtDebug>
-
+#include <QVBoxLayout>
 
 namespace Ui {
     class DjooleaWindow;
@@ -45,6 +45,8 @@ private:
     PlayerControlsWidget *m_playerControls;
     SearchBarWidget *m_searchBar;
     PlaylistWidget *m_playlist;
+
+    QVBoxLayout *m_contentLayout;
 };
 
 #endif // DJOOLEAWINDOW_H
