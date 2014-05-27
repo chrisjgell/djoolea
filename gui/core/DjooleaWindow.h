@@ -4,6 +4,7 @@
 #include "PlayerControlsWidget.h"
 #include "SearchBarWidget.h"
 #include "PlaylistWidget.h"
+#include "TrackInfoWidget.h"
 
 #include <QMainWindow>
 #include <QSettings>
@@ -42,10 +43,12 @@ private slots:
 
 private:
     Ui::DjooleaWindow *ui;
+    //Custom Widgets
     PlayerControlsWidget *m_playerControls;
     SearchBarWidget *m_searchBar;
     PlaylistWidget *m_playlist;
-
+    TrackInfoWidget *m_trackInfo;
+    //Layouts
     QVBoxLayout *m_contentLayout;
 };
 

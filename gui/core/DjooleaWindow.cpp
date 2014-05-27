@@ -28,7 +28,8 @@ void DjooleaWindow::initGui() {
     m_contentLayout = new QVBoxLayout();
     m_playlist = new PlaylistWidget(ui->playlist);
     m_searchBar = new SearchBarWidget(ui->headerFrame);
-    m_playerControls = new PlayerControlsWidget(ui->controlsFrame);    
+    m_playerControls = new PlayerControlsWidget(ui->controlsFrame);
+    m_trackInfo = new TrackInfoWidget(ui->trackInfo);
 
     qDebug() << Q_FUNC_INFO << "setting layouts";
     ui->playlist->setLayout(m_contentLayout);
