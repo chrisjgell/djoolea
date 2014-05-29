@@ -29,3 +29,10 @@ FORMS    += DjooleaWindow.ui \
 
 RESOURCES +=
 
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../data/release/ -ldjoolea-gui-data
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../data/debug/ -ldjoolea-gui-data
+else:unix: LIBS += -L$$OUT_PWD/../data/ -ldjoolea-gui-data
+
+INCLUDEPATH += $$PWD/../data
+DEPENDPATH += $$PWD/../data

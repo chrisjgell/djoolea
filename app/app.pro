@@ -14,3 +14,4 @@ else:unix: LIBS += -L$$OUT_PWD/../gui/core/ -ldjoolea-gui-core
 
 INCLUDEPATH += $$PWD/../gui/core
 DEPENDPATH += $$PWD/../gui/core
+

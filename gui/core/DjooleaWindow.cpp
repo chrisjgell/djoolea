@@ -1,9 +1,10 @@
 #include <QCoreApplication>
 #include <QVBoxLayout>
+#include <QFile>
 #include "DjooleaWindow.h"
 #include "ui_DjooleaWindow.h"
 #include "PlayerControlsWidget.h"
-
+#include "ResourceLoader.h"
 
 const QString DjooleaWindow::STS_GROUP = QString("djoolea_settings_group");
 const QString DjooleaWindow::STS_GEOM = QString("setts_geom");
@@ -24,6 +25,8 @@ DjooleaWindow::~DjooleaWindow() {
 }
 
 void DjooleaWindow::initGui() {
+    qDebug() << Q_FUNC_INFO << "loading resources";
+    ResourceLoader::initImageResources();
     qDebug() << Q_FUNC_INFO << "creating widgets";
     m_contentLayout = new QVBoxLayout();
     m_playlist = new PlaylistWidget(ui->playlist);

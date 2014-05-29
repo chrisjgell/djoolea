@@ -16,6 +16,9 @@ public:
     ~TrackInfoWidget();
 
 private:
+    void initGui();
+
+private:
     Ui::TrackInfoWidget *ui;
 };
 

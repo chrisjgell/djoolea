@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/images">
-        <file>images/default_album_art.png</file>
+        <file alias="default_album_art_96x96">images/default_album_art_96x96.png</file>
+    </qresource>
+    <qresource prefix="/images/controls">
+        <file alias="play_hover">images/play_hover.png</file>
+        <file alias="play">images/play.png</file>
     </qresource>
 </RCC>

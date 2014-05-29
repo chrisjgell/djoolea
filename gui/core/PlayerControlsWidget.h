@@ -2,6 +2,8 @@
 #define PLAYERCONTROLSWIDGET_H
 
 #include <QWidget>
+#include <QIcon>
+#include <QPixmap>
 
 namespace Ui {
 class PlayerControlsWidget;
@@ -16,7 +18,12 @@ public:
     ~PlayerControlsWidget();
 
 private:
+    void initGui();
+
+private:
     Ui::PlayerControlsWidget *ui;
+
+    void initPlayButton();
 };
 
 #endif // PLAYERCONTROLS_H
