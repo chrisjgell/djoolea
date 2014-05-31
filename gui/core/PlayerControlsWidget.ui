@@ -40,8 +40,33 @@
    </property>
    <item>
     <widget class="QPushButton" name="prevButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
      <property name="text">
-      <string>Previous</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../data/images.qrc">
+       <normaloff>:/images/controls/previous-track</normaloff>:/images/controls/previous-track</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -92,8 +117,33 @@
    </item>
    <item>
     <widget class="QPushButton" name="nextButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
      <property name="text">
-      <string>Next</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../data/images.qrc">
+       <normaloff>:/images/controls/next-track</normaloff>:/images/controls/next-track</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

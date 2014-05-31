@@ -5,5 +5,7 @@
     <qresource prefix="/images/controls">
         <file alias="play_hover">images/play_hover.png</file>
         <file alias="play">images/play.png</file>
+        <file alias="previous-track">images/previous-track.png</file>
+        <file alias="next-track">images/next-track.png</file>
     </qresource>
 </RCC>
