@@ -1,6 +1,6 @@
 #include "DjooleaPlayerService.h"
 
-
-DjooleaPlayerService::DjooleaPlayerService() {
-
+DjooleaPlayerService::DjooleaPlayerService(QObject *parent) :
+    QObject(parent)
+{
 }

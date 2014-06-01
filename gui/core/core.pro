@@ -33,3 +33,10 @@ else:unix: LIBS += -L$$OUT_PWD/../data/ -ldjoolea-gui-data
 
 INCLUDEPATH += $$PWD/../data
 DEPENDPATH += $$PWD/../data
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../lib/services/release/ -ldjoolea-lib-services
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/services/debug/ -ldjoolea-lib-services
+else:unix: LIBS += -L$$OUT_PWD/../../lib/services/ -ldjoolea-lib-services
+
+INCLUDEPATH += $$PWD/../../lib/services
+DEPENDPATH += $$PWD/../../lib/services

@@ -6,17 +6,19 @@
 
 QT       -= gui
 
-TARGET = services
+TARGET = djoolea-lib-services
 TEMPLATE = lib
 
 DEFINES += SERVICES_LIBRARY
 
-SOURCES += DjooleaPlayerService.cpp \
-    DjooleaDataService.cpp
+SOURCES += \
+    DjooleaPlayerService.cpp \
+    DjooleaFileService.cpp
 
-HEADERS += DjooleaPlayerService.h\
+HEADERS +=\
         services_global.h \
-    DjooleaDataService.h
+    DjooleaPlayerService.h \
+    DjooleaFileService.h
 
 unix {
     target.path = /usr/lib

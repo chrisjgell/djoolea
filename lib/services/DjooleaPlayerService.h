@@ -1,13 +1,18 @@
 #ifndef DJOOLEAPLAYERSERVICE_H
 #define DJOOLEAPLAYERSERVICE_H
 
-#include "services_global.h"
+#include <QObject>
 
-class SERVICESSHARED_EXPORT DjooleaPlayerService
+class DjooleaPlayerService : public QObject
 {
-
+    Q_OBJECT
 public:
-    DjooleaPlayerService();
+    explicit DjooleaPlayerService(QObject *parent = 0);
+
+signals:
+
+public slots:
+
 };
 
 #endif // DJOOLEAPLAYERSERVICE_H

@@ -7,3 +7,4 @@ SUBDIRS += \
 
 #Dependencies
 app.depends = gui
+gui.depends = lib

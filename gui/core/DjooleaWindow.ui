@@ -14,9 +14,18 @@
    <string>Djoolea</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QFrame#trackInfo {
+   <string notr="true">QWidget#centralWidget {
 	background: rgb(57, 57, 57)
 }
+
+QFrame#trackInfo {
+	background: rgb(30, 30, 30 )
+}
+
+QFrame#controlsFrame {
+	background: rgb(57, 57, 57)
+}
+
 </string>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -32,6 +41,12 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QFrame" name="headerFrame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -202,7 +217,6 @@
    <addaction name="menuSettings"/>
    <addaction name="menuEdit"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

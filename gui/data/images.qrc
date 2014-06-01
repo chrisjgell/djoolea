@@ -3,9 +3,18 @@
         <file alias="default_album_art_96x96">images/default_album_art_96x96.png</file>
     </qresource>
     <qresource prefix="/images/controls">
-        <file alias="play_hover">images/play_hover.png</file>
         <file alias="play">images/play.png</file>
         <file alias="previous-track">images/previous-track.png</file>
         <file alias="next-track">images/next-track.png</file>
+        <file alias="pause">images/pause.png</file>
+        <file alias="repear-on">images/repeat-on.png</file>
+        <file alias="repeat-one-on">images/repeat-one-on.png</file>
+        <file alias="repeat">images/repeat.png</file>
+        <file alias="shuffle-on">images/shuffle-on.png</file>
+        <file alias="shuffle">images/shuffle.png</file>
+        <file alias="next-track-hover">images/next-track-hover.png</file>
+        <file alias="pause-hover">images/pause-hover.png</file>
+        <file alias="play-hover">images/play-hover.png</file>
+        <file alias="previous-track-hover">images/previous-track-hover.png</file>
     </qresource>
 </RCC>

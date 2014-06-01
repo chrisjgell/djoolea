@@ -25,6 +25,44 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+	border: none
+}
+
+QPushButton#playButton {
+	border-image: url(&quot;:/images/controls/play&quot;)
+}
+
+QPushButton#playButton:hover {
+	border-image: url(&quot;:/images/controls/play-hover&quot;)
+}
+
+QPushButton#pauseButton {
+	border-image: url(&quot;:/images/controls/pause&quot;)
+}
+
+QPushButton#pauseButton:hover {
+	border-image: url(&quot;:/images/controls/pause-hover&quot;)
+}
+
+QPushButton#prevButton {
+	border-image: url(&quot;:/images/controls/previous-track&quot;)
+}
+
+QPushButton#prevButton:hover {
+	border-image: url(&quot;:/images/controls/previous-track-hover&quot;)
+}
+
+QPushButton#nextButton {
+	border-image: url(&quot;:/images/controls/next-track&quot;)
+}
+
+QPushButton#nextButton:hover {
+	border-image: url(&quot;:/images/controls/next-track-hover&quot;)
+}
+</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="leftMargin">
     <number>2</number>
@@ -55,10 +93,6 @@
      <property name="text">
       <string/>
      </property>
-     <property name="icon">
-      <iconset resource="../data/images.qrc">
-       <normaloff>:/images/controls/previous-track</normaloff>:/images/controls/previous-track</iconset>
-     </property>
      <property name="iconSize">
       <size>
        <width>48</width>
@@ -71,9 +105,9 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="playButton">
+    <widget class="QStackedWidget" name="playStackedWidget">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -90,29 +124,105 @@
        <height>48</height>
       </size>
      </property>
-     <property name="text">
-      <string/>
+     <property name="currentIndex">
+      <number>1</number>
      </property>
-     <property name="icon">
-      <iconset resource="../data/images.qrc">
-       <normaloff>:/images/controls/play</normaloff>
-       <activeon>:/images/controls/play_hover</activeon>:/images/controls/play</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-     <property name="default">
-      <bool>false</bool>
-     </property>
-     <property name="flat">
-      <bool>true</bool>
-     </property>
+     <widget class="QWidget" name="playButtonArea">
+      <widget class="QPushButton" name="playButton">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>48</width>
+         <height>48</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="pauseButtonArea">
+      <widget class="QPushButton" name="pauseButton">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>48</width>
+         <height>48</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
     </widget>
    </item>
    <item>
@@ -131,10 +241,6 @@
      </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="../data/images.qrc">
-       <normaloff>:/images/controls/next-track</normaloff>:/images/controls/next-track</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -165,17 +271,249 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="shuffleButton">
-     <property name="text">
-      <string>Shuffle</string>
+    <widget class="QStackedWidget" name="shuffleStackedWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="shuffleButtonArea">
+      <widget class="QPushButton" name="shuffleButton">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>48</width>
+         <height>48</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../data/images.qrc">
+         <normaloff>:/images/controls/shuffle</normaloff>:/images/controls/shuffle</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="shuffleOnButtonArea">
+      <widget class="QPushButton" name="shuffleOnButton">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>48</width>
+         <height>48</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../data/images.qrc">
+         <normaloff>:/images/controls/shuffle-on</normaloff>:/images/controls/shuffle-on</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>shuffleOnButton</zorder>
+      <zorder>shuffleOnButton</zorder>
+     </widget>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="repeatButton">
-     <property name="text">
-      <string>Repeat</string>
+    <widget class="QStackedWidget" name="repeatStackedWidget">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
      </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="repeatButtonArea">
+      <widget class="QPushButton" name="repeatButton">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>48</width>
+         <height>48</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../data/images.qrc">
+         <normaloff>:/images/controls/repeat</normaloff>:/images/controls/repeat</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="repeatOnButtonArea">
+      <widget class="QPushButton" name="repeatOnButton">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>48</width>
+         <height>48</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../data/images.qrc">
+         <normaloff>:/images/controls/repear-on</normaloff>:/images/controls/repear-on</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="repeatOneOnButtonArea">
+      <widget class="QPushButton" name="repeatOneOnButton">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>48</width>
+         <height>48</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../data/images.qrc">
+         <normaloff>:/images/controls/repeat-one-on</normaloff>:/images/controls/repeat-one-on</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
     </widget>
    </item>
   </layout>

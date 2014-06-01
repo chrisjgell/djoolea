@@ -1,4 +1,6 @@
 #include <QDebug>
+#include <QPixmap>
+#include <QIcon>
 #include "PlayerControlsWidget.h"
 #include "ui_PlayerControlsWidget.h"
 
@@ -7,6 +9,7 @@ PlayerControlsWidget::PlayerControlsWidget(QWidget *parent) :
     ui(new Ui::PlayerControlsWidget) {
     ui->setupUi(this);
     initGui();
+    initConnections();
 }
 
 PlayerControlsWidget::~PlayerControlsWidget() {
@@ -14,17 +17,67 @@ PlayerControlsWidget::~PlayerControlsWidget() {
 }
 
 void PlayerControlsWidget::initGui() {
-    qDebug() << Q_FUNC_INFO << "setting player controls images";
-    //initPlayButton();
+    onStop();
 }
 
-void PlayerControlsWidget::initPlayButton() {
+void PlayerControlsWidget::initConnections() {
+    connect(ui->playButton, SIGNAL(clicked()), this, SLOT(playClicked()));
+    connect(ui->pauseButton, SIGNAL(clicked()), this, SLOT(pauseClicked()));
+    connect(ui->prevButton, SIGNAL(clicked()), this, SLOT(prevClicked()));
+    connect(ui->nextButton, SIGNAL(clicked()), this, SLOT(nextClicked()));
 
-    QPixmap playButtonPixmap(QString::fromUtf8(":/images/controls/play"));
-    QIcon playButtonIcon(playButtonPixmap);
-    ui->playButton->setIcon(playButtonIcon);
-    ui->playButton->setIconSize(playButtonPixmap.rect().size());
-   // ui->playButton->setText("");
-   // ui->playButton->setMinimumHeight(playButtonPixmap.rect().height());
-   // ui->playButton->setMinimumWidth(playButtonPixmap.rect().width());
+    connect(ui->shuffleButton, SIGNAL(clicked()), this, SLOT(shuffleClicked()));
+    connect(ui->shuffleOnButton,SIGNAL(clicked()), this, SLOT(shuffleOnClicked()));
+
+    connect(ui->repeatButton, SIGNAL(clicked()), this, SLOT(repeatClicked()));
+    connect(ui->repeatOnButton, SIGNAL(clicked()), this, SLOT(repeatOnClicked()));
+    connect(ui->repeatOneOnButton, SIGNAL(clicked()), this, SLOT(repeatOneOnClicked()));
+}
+
+void PlayerControlsWidget::onPlay() {
+
+}
+
+void PlayerControlsWidget::onPause() {
+
+}
+
+void PlayerControlsWidget::onStop() {
+    ui->playStackedWidget->setCurrentWidget(ui->playButtonArea);
+}
+
+void PlayerControlsWidget::playClicked() {
+    ui->playStackedWidget->setCurrentWidget(ui->pauseButtonArea);
+}
+
+void PlayerControlsWidget::pauseClicked() {
+    ui->playStackedWidget->setCurrentWidget(ui->playButtonArea);
+}
+
+void PlayerControlsWidget::prevClicked() {
+
+}
+
+void PlayerControlsWidget::nextClicked() {
+
+}
+
+void PlayerControlsWidget::shuffleClicked() {
+    ui->shuffleStackedWidget->setCurrentWidget(ui->shuffleOnButtonArea);
+}
+
+void PlayerControlsWidget::shuffleOnClicked() {
+    ui->shuffleStackedWidget->setCurrentWidget(ui->shuffleButtonArea);
+}
+
+void PlayerControlsWidget::repeatClicked() {
+    ui->repeatStackedWidget->setCurrentWidget(ui->repeatOnButtonArea);
+}
+
+void PlayerControlsWidget::repeatOnClicked() {
+    ui->repeatStackedWidget->setCurrentWidget(ui->repeatOneOnButtonArea);
+}
+
+void PlayerControlsWidget::repeatOneOnClicked() {
+    ui->repeatStackedWidget->setCurrentWidget(ui->repeatButtonArea);
 }
