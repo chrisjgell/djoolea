@@ -15,15 +15,24 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget#centralWidget {
-	background: rgb(57, 57, 57)
+	background: rgb(37, 37, 37)
 }
+
+QFrame#playlistFrame {
+	border: 1px solid rgb(124, 124, 124)
+}
+
+QFrame#sidebarFrame {
+	border: 1px solid rgb(124, 124, 124)
+}
+
 
 QFrame#trackInfo {
 	background: rgb(30, 30, 30 )
 }
 
 QFrame#controlsFrame {
-	background: rgb(57, 57, 57)
+	background: rgb(37, 37, 37)
 }
 
 </string>
@@ -111,7 +120,7 @@ QFrame#controlsFrame {
            </size>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
@@ -125,7 +134,7 @@ QFrame#controlsFrame {
            </sizepolicy>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>

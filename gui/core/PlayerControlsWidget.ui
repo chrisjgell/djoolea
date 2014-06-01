@@ -30,6 +30,10 @@
 	border: none
 }
 
+QLabel#volumeLabel {
+	border-image: url(&quot;:/images/controls/volume&quot;)
+}
+
 QPushButton#playButton {
 	border-image: url(&quot;:/images/controls/play&quot;)
 }
@@ -80,14 +84,14 @@ QPushButton#nextButton:hover {
     <widget class="QPushButton" name="prevButton">
      <property name="minimumSize">
       <size>
-       <width>48</width>
-       <height>48</height>
+       <width>36</width>
+       <height>36</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>48</width>
-       <height>48</height>
+       <width>36</width>
+       <height>36</height>
       </size>
      </property>
      <property name="text">
@@ -95,8 +99,8 @@ QPushButton#nextButton:hover {
      </property>
      <property name="iconSize">
       <size>
-       <width>48</width>
-       <height>48</height>
+       <width>36</width>
+       <height>36</height>
       </size>
      </property>
      <property name="flat">
@@ -229,6 +233,53 @@ QPushButton#nextButton:hover {
     <widget class="QPushButton" name="nextButton">
      <property name="minimumSize">
       <size>
+       <width>36</width>
+       <height>36</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>36</width>
+       <height>36</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>36</width>
+       <height>36</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSlider" name="volumeSlider">
+     <property name="minimumSize">
+      <size>
+       <width>150</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>150</width>
+       <height>18</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="volumeLabel">
+     <property name="minimumSize">
+      <size>
        <width>48</width>
        <height>48</height>
       </size>
@@ -241,15 +292,6 @@ QPushButton#nextButton:hover {
      </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="flat">
-      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -280,14 +322,14 @@ QPushButton#nextButton:hover {
      </property>
      <property name="minimumSize">
       <size>
-       <width>48</width>
-       <height>48</height>
+       <width>36</width>
+       <height>36</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>48</width>
-       <height>48</height>
+       <width>36</width>
+       <height>36</height>
       </size>
      </property>
      <property name="currentIndex">
@@ -299,20 +341,20 @@ QPushButton#nextButton:hover {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="text">
@@ -324,9 +366,12 @@ QPushButton#nextButton:hover {
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
@@ -336,8 +381,8 @@ QPushButton#nextButton:hover {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -348,14 +393,14 @@ QPushButton#nextButton:hover {
        </property>
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="text">
@@ -367,16 +412,14 @@ QPushButton#nextButton:hover {
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="flat">
         <bool>true</bool>
        </property>
       </widget>
-      <zorder>shuffleOnButton</zorder>
-      <zorder>shuffleOnButton</zorder>
      </widget>
     </widget>
    </item>
@@ -384,14 +427,14 @@ QPushButton#nextButton:hover {
     <widget class="QStackedWidget" name="repeatStackedWidget">
      <property name="minimumSize">
       <size>
-       <width>48</width>
-       <height>48</height>
+       <width>36</width>
+       <height>36</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>48</width>
-       <height>48</height>
+       <width>36</width>
+       <height>36</height>
       </size>
      </property>
      <property name="currentIndex">
@@ -403,20 +446,20 @@ QPushButton#nextButton:hover {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="text">
@@ -428,8 +471,8 @@ QPushButton#nextButton:hover {
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="flat">
@@ -443,20 +486,20 @@ QPushButton#nextButton:hover {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="text">
@@ -468,9 +511,12 @@ QPushButton#nextButton:hover {
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
@@ -480,20 +526,20 @@ QPushButton#nextButton:hover {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="text">
@@ -505,8 +551,8 @@ QPushButton#nextButton:hover {
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>36</width>
+         <height>36</height>
         </size>
        </property>
        <property name="flat">

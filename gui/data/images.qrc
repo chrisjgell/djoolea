@@ -16,5 +16,6 @@
         <file alias="pause-hover">images/pause-hover.png</file>
         <file alias="play-hover">images/play-hover.png</file>
         <file alias="previous-track-hover">images/previous-track-hover.png</file>
+        <file alias="volume">images/volume.png</file>
     </qresource>
 </RCC>

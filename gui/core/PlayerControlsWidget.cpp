@@ -17,18 +17,18 @@ PlayerControlsWidget::~PlayerControlsWidget() {
 }
 
 void PlayerControlsWidget::initGui() {
+    qDebug() << Q_FUNC_INFO << "init gui";
     onStop();
 }
 
 void PlayerControlsWidget::initConnections() {
+    qDebug() << Q_FUNC_INFO << "init signal/slots connections";
     connect(ui->playButton, SIGNAL(clicked()), this, SLOT(playClicked()));
     connect(ui->pauseButton, SIGNAL(clicked()), this, SLOT(pauseClicked()));
     connect(ui->prevButton, SIGNAL(clicked()), this, SLOT(prevClicked()));
     connect(ui->nextButton, SIGNAL(clicked()), this, SLOT(nextClicked()));
-
     connect(ui->shuffleButton, SIGNAL(clicked()), this, SLOT(shuffleClicked()));
     connect(ui->shuffleOnButton,SIGNAL(clicked()), this, SLOT(shuffleOnClicked()));
-
     connect(ui->repeatButton, SIGNAL(clicked()), this, SLOT(repeatClicked()));
     connect(ui->repeatOnButton, SIGNAL(clicked()), this, SLOT(repeatOnClicked()));
     connect(ui->repeatOneOnButton, SIGNAL(clicked()), this, SLOT(repeatOneOnClicked()));
