@@ -3,17 +3,16 @@
 
 TrackInfoWidget::TrackInfoWidget(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::TrackInfoWidget)
-{
+    ui(new Ui::TrackInfoWidget) {
     ui->setupUi(this);
     initGui();
 }
 
-TrackInfoWidget::~TrackInfoWidget()
-{
+TrackInfoWidget::~TrackInfoWidget() {
     delete ui;
 }
 
 void TrackInfoWidget::initGui() {
-    ui->trackImage->setPixmap(QPixmap(QString::fromUtf8(":/images/default_album_art_96x96")));
+    m_defaultAlbumArtPixmap = new QPixmap(QString::fromUtf8(":/images/default_album_art_96x96"));
+    ui->trackImage->setPixmap(*m_defaultAlbumArtPixmap);
 }

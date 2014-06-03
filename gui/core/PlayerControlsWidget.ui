@@ -94,6 +94,9 @@ QPushButton#nextButton:hover {
        <height>36</height>
       </size>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -129,7 +132,7 @@ QPushButton#nextButton:hover {
       </size>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="playButtonArea">
       <widget class="QPushButton" name="playButton">
@@ -158,6 +161,9 @@ QPushButton#nextButton:hover {
          <width>48</width>
          <height>48</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string/>
@@ -213,6 +219,9 @@ QPushButton#nextButton:hover {
          <height>48</height>
         </size>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -242,6 +251,9 @@ QPushButton#nextButton:hover {
        <width>36</width>
        <height>36</height>
       </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
      </property>
      <property name="text">
       <string/>
@@ -333,7 +345,7 @@ QPushButton#nextButton:hover {
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="shuffleButtonArea">
       <widget class="QPushButton" name="shuffleButton">
@@ -356,6 +368,9 @@ QPushButton#nextButton:hover {
          <width>36</width>
          <height>36</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string/>
@@ -402,6 +417,9 @@ QPushButton#nextButton:hover {
          <width>36</width>
          <height>36</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string/>
@@ -462,6 +480,9 @@ QPushButton#nextButton:hover {
          <height>36</height>
         </size>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -502,6 +523,9 @@ QPushButton#nextButton:hover {
          <height>36</height>
         </size>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -541,6 +565,9 @@ QPushButton#nextButton:hover {
          <width>36</width>
          <height>36</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string/>

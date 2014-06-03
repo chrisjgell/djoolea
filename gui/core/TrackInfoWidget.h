@@ -20,6 +20,8 @@ private:
 
 private:
     Ui::TrackInfoWidget *ui;
+
+    QPixmap *m_defaultAlbumArtPixmap;
 };
 
 #endif // TRACKINFOWIDGET_H

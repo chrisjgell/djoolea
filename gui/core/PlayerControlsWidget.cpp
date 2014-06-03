@@ -18,6 +18,8 @@ PlayerControlsWidget::~PlayerControlsWidget() {
 
 void PlayerControlsWidget::initGui() {
     qDebug() << Q_FUNC_INFO << "init gui";
+    ui->shuffleStackedWidget->setCurrentWidget(ui->shuffleButtonArea);
+    ui->repeatStackedWidget->setCurrentWidget(ui->repeatButtonArea);
     onStop();
 }
 
